@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhamini Deshpande | AI &amp; ML Engineer</title>
+<meta name="description" content="Portfolio of Bhamini Deshpande, B.Tech CSE (AI &amp; ML) student at VIT Bhopal. Research in satellite image super-resolution and financial risk profiling; projects in medical AI, AR/VR and analytics.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F4; --panel:#F8FAFB; --ink:#0F1B2D; --muted:#4F5E75; --line:#C7D1DC; --accent:#1F4FE0; --on-accent:#fff;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0D1522;--panel:#142033;--ink:#E8EEF6;--muted:#9AABC2;--line:#27374E;--accent:#7DA2FF;--on-accent:#0D1522}
+}
+:root[data-theme="dark"]{--bg:#0D1522;--panel:#142033;--ink:#E8EEF6;--muted:#9AABC2;--line:#27374E;--accent:#7DA2FF;--on-accent:#0D1522}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,input:focus-visible+.handle .knob{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;letter-spacing:-.02em}
+
+/* nav */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+header.top b{font-family:var(--display);font-weight:700;font-size:1.05rem}
+nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero h1{font-weight:700;font-size:clamp(2.6rem,8vw,5.6rem);max-width:12ch}
+.hero .lede{font-size:clamp(1.15rem,2.4vw,1.45rem);max-width:34em;color:var(--muted);margin:22px 0 0;line-height:1.5}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:10px 18px;border-radius:6px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-1px)}
+
+/* resolve comparison */
+figure.resolve{margin:44px 0 0}
+.stage{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#000;touch-action:pan-y}
+.stage canvas{display:block;width:100%;height:auto;image-rendering:pixelated}
+.stage input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.handle{position:absolute;top:0;bottom:0;width:0;pointer-events:none}
+.handle::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.knob{position:absolute;top:50%;left:-18px;width:36px;height:36px;margin-top:-18px;border-radius:50%;background:#fff;color:#0F1B2D;display:grid;place-items:center;font-size:.8rem;font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.4)}
+.tag{position:absolute;top:10px;padding:3px 9px;border-radius:3px;font-size:.8rem;font-weight:600;background:rgba(15,27,45,.8);color:#fff;pointer-events:none}
+.tag.l{left:10px}.tag.r{right:10px}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:10px;max-width:60em}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:12px 40px}
+.sec>h2{font-size:1.7rem;align-self:start;position:sticky;top:76px}
+.sec>.intro{grid-column:2;margin:0 0 8px;color:var(--muted);max-width:44em}
+.item{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:26px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:4px}
+.item h3{font-size:1.4rem}
+.meta{color:var(--muted);font-size:.95rem;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px;padding:0;list-style:none}
+.chips li{font-size:.85rem;padding:2px 10px;border:1px solid var(--line);border-radius:99px;background:var(--panel)}
+.item ul.pts{margin:8px 0 0;padding-left:1.15em;max-width:46em}
+.item ul.pts li{margin:7px 0}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:6px 0 0;font-weight:600;font-family:var(--display);font-size:1.05rem}
+.facts span{color:var(--accent)}
+.status{display:inline-block;font-size:.85rem;font-weight:600;color:var(--accent);margin-left:8px;vertical-align:middle;font-family:var(--body)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px 32px}
+.skills h3{font-size:1rem;font-family:var(--body);font-weight:600;margin-bottom:6px}
+.skills p{margin:0;color:var(--muted);font-size:1rem}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.two h3{font-size:1.15rem;margin-bottom:6px}
+.two p{margin:4px 0;color:var(--muted)}
+
+.contact .big{font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,4.4vw,2.6rem);word-break:break-word;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--accent)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:760px){
+  .sec{grid-template-columns:1fr}
+  .sec>h2{position:static}
+  .sec>.intro{grid-column:1}
+  .hero{padding-top:36px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <b>Bhamini Deshpande</b>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<div class="hero">
+  <h1>Bhamini Deshpande</h1>
+  <p class="lede">I build computer vision and machine learning systems, from <strong>satellite image super-resolution</strong> at ISRO's Space Applications Centre to <strong>explainable diagnostics</strong> for healthcare. B.Tech CSE (AI &amp; ML), VIT Bhopal.</p>
+  <div class="links">
+    <a class="btn primary" href="#research">See my research</a>
+    <a class="btn" href="https://github.com/BhaminiD" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/bhamini-deshpande-07a08a281/" rel="noopener">LinkedIn</a>
+  </div>
+
+  <figure class="resolve">
+    <div class="stage">
+      <canvas id="cv" width="320" height="176" role="img" aria-label="A grayscale aerial-style image shown as blurry blocks on the left and sharp on the right"></canvas>
+      <span class="tag l">Low resolution</span><span class="tag r">Super-resolved</span>
+      <input id="split" type="range" min="0" max="100" value="50" aria-label="Compare low-resolution and super-resolved image">
+      <div class="handle" id="handle" style="left:50%"><div class="knob" aria-hidden="true">&#8596;</div></div>
+    </div>
+    <figcaption>Drag to compare. This is a generated illustration of the idea behind my SAC-ISRO research (recovering detail lost in low-resolution grayscale imagery), not real satellite data.</figcaption>
+  </figure>
+</div>
+
+<section id="research">
+  <div class="sec">
+    <h2>Research</h2>
+    <p class="intro">Two ongoing research projects, one in remote sensing and one in rural economics.</p>
+
+    <div class="item">
+      <h3>Multi-image super-resolution for grayscale satellite images <span class="status">Ongoing</span></h3>
+      <p class="meta">SAC-ISRO</p>
+      <ul class="chips" aria-label="Tags"><li>Computer vision</li><li>Deep learning</li><li>Remote sensing</li><li>PyTorch</li><li>Swin2SR</li></ul>
+      <ul class="pts">
+        <li>Implementing and modifying the Swin2SR architecture in PyTorch, covering dataset preparation, patch generation, model training and performance evaluation.</li>
+        <li>Investigating deep learning approaches to remote sensing image enhancement, with a focus on reconstruction fidelity and computational efficiency.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Financial shock risk profiling <span class="status">Ongoing</span></h3>
+      <p class="meta">EPICS research</p>
+      <ul class="chips" aria-label="Tags"><li>Python</li><li>Data analysis</li><li>Statistics</li></ul>
+      <ul class="pts">
+        <li>Developing a Financial Shock Vulnerability Index (FSVI) for rural households and generating interpretable risk profiles that support targeted interventions and data-driven policy recommendations.</li>
+        <li>Studying how rainfall variability, crop productivity and market support mechanisms relate to household income stability, using quantitative analysis.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec">
+    <h2>Projects</h2>
+
+    <div class="item">
+      <h3>MedicarePlus: smart medical diagnostic system</h3>
+      <ul class="chips" aria-label="Technologies"><li>FastAPI</li><li>React.js</li><li>PyTorch</li><li>Keras</li><li>HL7 FHIR R4</li><li>Docker</li><li>Grad-CAM</li></ul>
+      <p class="facts"><span>7</span> pathologies <span>93.38%</span> average accuracy <span>&lt;100 ms</span> inference</p>
+      <ul class="pts">
+        <li><b>Multi-pathology diagnostic pipeline.</b> A clinical screening platform covering pneumonia, malaria, diabetes, CKD, liver disease, cardiac disease and breast cancer.</li>
+        <li><b>Explainable AI.</b> An interpretability engine that uses Grad-CAM gradients to overlay JET colormap heatmaps on chest X-rays, alongside feature contribution percentages from tree models on tabular data.</li>
+        <li><b>Healthcare interoperability.</b> A two-way conversion layer that turns multimodal patient observations and findings into standard HL7 FHIR R4 JSON bundles, mapped to LOINC and SNOMED-CT.</li>
+        <li><b>Cloud-native full stack.</b> Asynchronous REST APIs built with FastAPI, Uvicorn and Pydantic, paired with a responsive React.js interface. Frontend and backend run as microservices with Docker and Docker Compose.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Human anatomy and physiology visualization tool (AR/VR) <span class="status">In development</span></h3>
+      <ul class="chips" aria-label="Technologies"><li>Unity</li><li>Blender</li><li>MediaPipe</li><li>AR/VR</li></ul>
+      <p class="facts"><span>200+</span> biology students at VIT Bhopal use it</p>
+      <ul class="pts">
+        <li>An interactive AR/VR tool for exploring the muscular and skeletal systems, with 3D models made in Blender and immersive rendering in Unity.</li>
+        <li>MediaPipe pose estimation places anatomical labels on the body in real time through smartphone AR, to support medical education.</li>
+        <li>Zoom, layer toggling and 360° rotation allow detailed study.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Big data e-commerce analytics platform: heavy user intelligence system</h3>
+      <ul class="chips" aria-label="Technologies"><li>Python</li><li>Flask</li><li>Pandas</li><li>Scikit-learn</li><li>NumPy</li><li>Chart.js</li><li>Bootstrap 5</li><li>REST API</li><li>Docker</li></ul>
+      <p class="facts"><span>10,000</span> transactions <span>1,000</span> users <span>5</span> categories</p>
+      <ul class="pts">
+        <li><b>Behavioral analytics pipeline.</b> An end-to-end platform that processes all of this data and generates insights in under a second.</li>
+        <li><b>Heavy user segmentation.</b> A 90th-percentile engine that sorts users into Basic, Prime and VIP tiers and extracts spend, order value and peak-hour KPIs with Pandas.</li>
+        <li><b>Recommendation engine.</b> Collaborative filtering with Scikit-learn cosine similarity on a user-item matrix, returning each user's top 5 products. New users fall back to popularity ranking.</li>
+        <li><b>Traffic and load balancing simulation.</b> A 4-server load balancer with auto-scaling at 90% load and load shedding, plus a 24-hour simulation with 3x peak-sale spikes.</li>
+        <li><b>Interactive dashboard.</b> Flask REST APIs feed a Bootstrap 5 and Chart.js front end that charts live traffic, sales and server load from JSON fetches.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <h3>Student research intern</h3>
+      <p class="meta">SAC (Space Applications Centre), ISRO &middot; On-site &middot; Computer vision and deep learning</p>
+      <ul class="pts">
+        <li>Researching transformer-based multi-image super-resolution to enhance low-resolution grayscale satellite imagery.</li>
+        <li>Working with ISRO researchers to validate experimental results and develop scalable solutions for satellite image processing.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>India machine learning engineer</h3>
+      <p class="meta">Fox Trading, in collaboration with IIT Roorkee's E-Cell &middot; Remote</p>
+      <ul class="pts">
+        <li>Built machine learning models for real business problems with Python, TensorFlow and scikit-learn, improving predictive accuracy and operational efficiency.</li>
+        <li>Worked with cross-functional teams to analyze data and present findings through clear visualizations and reports that fed into decisions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec">
+    <h2>Education</h2>
+    <div class="item">
+      <h3>VIT Bhopal University</h3>
+      <p class="meta">B.Tech in Computer Science and Engineering, specialization in AI &amp; ML &middot; CGPA 8.81 / 10</p>
+    </div>
+    <div class="item">
+      <h3>Fravashi Academy / Ambrosia English Medium School</h3>
+      <p class="meta">Class X: 97.3% &middot; Classes XI-XII: 73.8%</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><p>Python (TensorFlow, Keras, PyTorch), Java, JavaScript (React, Node.js), SQL, PHP, HTML/CSS, C, C++</p></div>
+      <div><h3>Frameworks and libraries</h3><p>Django, Flask, AngularJS, scikit-learn, OpenCV, MediaPipe</p></div>
+      <div><h3>Data and AI/ML</h3><p>Computer vision, NLP, predictive modelling, machine learning, data structures and algorithms</p></div>
+      <div><h3>Cloud and DevOps</h3><p>AWS (cloud APIs), Docker, CI/CD pipelines, Firebase</p></div>
+      <div><h3>Core CS</h3><p>Data structures and algorithms, operating systems, computer networks</p></div>
+      <div><h3>Embedded and IoT</h3><p>Raspberry Pi, Arduino, sensor integration (fall detection system)</p></div>
+      <div><h3>Tools</h3><p>Git/GitHub, MATLAB, Blender, Postman, PostgreSQL, MySQL</p></div>
+      <div><h3>Languages spoken</h3><p>English, Hindi, Marathi</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond">
+  <div class="sec">
+    <h2>Beyond the code</h2>
+    <div class="two">
+      <div>
+        <h3>Health Hack organizer, VIT Bhopal</h3>
+        <p>Feb 2025. Led Health Hack, a hackathon run with Johns Hopkins University, with 1,500+ participants and 30+ mentors. Post-event surveys showed 95% satisfaction.</p>
+      </div>
+      <div>
+        <h3>Critics' Choice Best Speaker, Scribido Talks</h3>
+        <p>Spoke to raise awareness about body shaming. <a href="https://youtu.be/WQ_WcnQ3dEg?si=ahrmPJRwndbiJRJQ" rel="noopener">Watch the talk</a>.</p>
+      </div>
+      <div>
+        <h3>Certification</h3>
+        <p>Applied Machine Learning in Python, University of Michigan (Coursera).</p>
+      </div>
+      <div>
+        <h3>Experiential training</h3>
+        <p>Two-week intensive training in Hyderabad and Pune at organizations including L&amp;T Metro, T-Hub, T-Works and BSNL, plus hands-on workshops on IoT, cybersecurity and networks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="sec">
+    <h2>Contact</h2>
+    <div>
+      <p style="margin:0 0 16px;color:var(--muted)">Based in Nashik, India. Open to research and ML opportunities.</p>
+      <a class="big" href="mailto:deshpandeyogita76@gmail.com">deshpandeyogita76@gmail.com</a>
+      <div class="links">
+        <a class="btn" href="https://www.linkedin.com/in/bhamini-deshpande-07a08a281/" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/BhaminiD" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Bhamini Deshpande</div></footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var W=320,H=176,B=16;
+  var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+  var range=document.getElementById('split'),handle=document.getElementById('handle');
+
+  function hash(x,y){var n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n);}
+  function vn(x,y){
+    var xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,
+        u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),
+        a=hash(xi,yi),b=hash(xi+1,yi),c=hash(xi,yi+1),d=hash(xi+1,yi+1);
+    return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;
+  }
+  function fbm(x,y,o){var s=0,a=.5,f=1;for(var i=0;i<o;i++){s+=a*vn(x*f,y*f);f*=2;a*=.5;}return s;}
+
+  // sharp "terrain": broad relief + field parcels with crisp edges + fine texture
+  var hi=new Float32Array(W*H);
+  for(var y=0;y<H;y++)for(var x=0;x<W;x++){
+    var base=fbm(x/70+3,y/70+7,4);
+    var px=Math.floor((x+y*.18)/17),py=Math.floor((y-x*.12)/13);
+    var parcel=hash(px,py);
+    var edge=(((x+y*.18)%17)<1.2||((y-x*.12)%13)<1.2)?.28:0;
+    var tex=fbm(x/3,y/3,2);
+    var g=.45*base+.3*parcel+.25*tex-edge;
+    hi[y*W+x]=Math.max(0,Math.min(1,g*1.25-.1));
+  }
+  // blurry blocks: average over BxB tiles
+  var lo=new Float32Array(W*H);
+  for(var by=0;by<H;by+=B)for(var bx=0;bx<W;bx+=B){
+    var s=0,n=0;
+    for(var j=by;j<Math.min(by+B,H);j++)for(var i=bx;i<Math.min(bx+B,W);i++){s+=hi[j*W+i];n++;}
+    s/=n;
+    for(var j2=by;j2<Math.min(by+B,H);j2++)for(var i2=bx;i2<Math.min(bx+B,W);i2++)lo[j2*W+i2]=s;
+  }
+  function toImage(src){
+    var img=ctx.createImageData(W,H),d=img.data;
+    for(var k=0;k<W*H;k++){var v=Math.round(src[k]*255);d[k*4]=v;d[k*4+1]=v+4>255?255:v+4;d[k*4+2]=v+10>255?255:v+10;d[k*4+3]=255;}
+    return img;
+  }
+  var imgLo=toImage(lo),imgHi=toImage(hi);
+
+  function draw(pct){
+    var sx=Math.round(W*pct/100);
+    ctx.putImageData(imgLo,0,0);
+    if(sx<W)ctx.putImageData(imgHi,0,0,sx,0,W-sx,H);
+    handle.style.left=pct+'%';
+  }
+  range.addEventListener('input',function(){draw(+range.value);});
+
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){draw(50);}
+  else{
+    // one intro sweep: the image resolves from left to the midpoint
+    var t0=null,dur=1800;
+    range.value=0;draw(0);
+    function step(t){
+      if(t0===null)t0=t;
+      var p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3),v=Math.round(e*50);
+      range.value=v;draw(v);
+      if(p<1&&!interrupted)requestAnimationFrame(step);
+    }
+    var interrupted=false;
+    ['pointerdown','keydown'].forEach(function(ev){range.addEventListener(ev,function(){interrupted=true;});});
+    requestAnimationFrame(step);
+  }
+})();
+</script>
+</body>
+</html>
